@@ -1,4 +1,4 @@
-package tiantian.com.Mapper;
+ package tiantian.com.Mapper;
 
 import tiantian.com.pojo.User;
 
@@ -12,5 +12,6 @@ import java.util.Map;
  */
 public interface UserMapper {
    public List<User> ListfindAll();
-
+    List<User> getUserByLimit(Map<String,Integer> map);
+    List<User> getUserByRowBound(Map<String,Integer> map);
 }

@@ -9,8 +9,17 @@
 <!--    <result column="name" property="name"></result>-->
 <!--    <result column="pwd" property="password"></result>-->
 <!--</resultMap>-->
+    <resultMap id="UserMap" type="User">
 
+    </resultMap>
     <select id="ListfindAll" resultType="User">
         select  * from user
     </select>
+    <select id="getUserByLimit" parameterType="map" resultType="User">
+        select * from user limit #{startIndex},#{pageSize}
+    </select>
+    <select id="getUserByRowBound" parameterType="map" resultType="User">
+         select * from user
+    </select>
+
 </mapper>
