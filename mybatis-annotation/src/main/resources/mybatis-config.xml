@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    提交log日志工厂-->
+<!--    <settings>-->
+<!--            <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--</settings>-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="tiantian.com.pojo.User" alias="User"></typeAlias>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <!--            事务管理器：用JDBC-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--                驱动，固定的-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://localhost:3306/mybatis1?serverTimezone=UTC&amp;useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--    2. 将配置文件resource的UserMapper.xml（/），转为类里的UserMapper（.）-->
+   <mappers>
+<mapper class="tiantian.com.Mapper.UserMapper"></mapper>
+   </mappers>
+</configuration>
